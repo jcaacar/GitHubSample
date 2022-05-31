@@ -1,0 +1,25 @@
+- id: detekt
+  name: detekt check
+  description: Runs the Detekt static code analyzer on Kotlin source files.
+  language: script
+  entry: ./gradlew clean detekt --no-build-cache
+  files: \.kt
+
+- id: ktlint
+  name: ktlint
+  description: Runs the ktlint on Kotlin source files.
+  entry: ./gradlew klintCheck --no-build-cache
+  language: script
+  files: \.kt
+
+- id: lint
+  name: lint
+  description: Runs lint
+  entry: ./gradlew lint --no-build-cache
+  language: script
+
+- id: unit_tests
+  name: unittests
+  description: Runs unit tests
+  entry: ./gradlew clean test --no-build-cache
+  language: script
