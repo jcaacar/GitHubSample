@@ -1,6 +1,5 @@
 package com.zeca.githubsample.remote.repositories.paging
 
-import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import kotlinx.coroutines.Dispatchers
@@ -43,7 +42,6 @@ internal class RemoteRepositoryPaging(
                 )
             }
         } catch (e: Exception) {
-            Log.e("ZECA", "ERROR -> ${e.localizedMessage}")
             LoadResult.Error(e)
         }
     }
