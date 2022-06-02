@@ -39,6 +39,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+
+        this.forEach {
+            it.buildConfigField("String", "GITHUB_API_BASE_URL", "\"https://api.github.com/\"")
+        }
     }
 
     compileOptions {
@@ -74,14 +78,14 @@ dependencies {
 
     implementation(Dependencies.HILT)
     kapt(Dependencies.HILT_COMPILER)
+    kapt(Dependencies.HILT_X_COMPILER)
 
     implementation(Dependencies.LIFECYCLE)
     implementation(Dependencies.LIFECYCLE_VIEWMODEL)
 
-    implementation(Dependencies.MOSHI)
-
     implementation(Dependencies.RETROFIT)
     implementation(Dependencies.RETROFIT_CONVERTER)
+    implementation(Dependencies.HTTP_LOGGER)
 
     implementation(Dependencies.PAGING)
 

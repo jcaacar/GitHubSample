@@ -6,14 +6,15 @@ object Dependencies {
 
     const val HILT = "com.google.dagger:hilt-android:${BuildDependenciesVersions.HILT}"
     const val HILT_COMPILER = "com.google.dagger:hilt-android-compiler:${BuildDependenciesVersions.HILT}"
+    const val HILT_X_COMPILER = "androidx.hilt:hilt-compiler:${BuildDependenciesVersions.HILT_X_COMPILER}"
 
     const val LIFECYCLE = "androidx.lifecycle:lifecycle-runtime-ktx:${BuildDependenciesVersions.LIFECYCLE}"
     const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${BuildDependenciesVersions.LIFECYCLE}"
 
-    const val MOSHI = "com.squareup.moshi:moshi-kotlin:${BuildDependenciesVersions.MOSHI}"
-
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${BuildDependenciesVersions.RETROFIT}"
-    const val RETROFIT_CONVERTER = "com.squareup.retrofit2:converter-moshi:${BuildDependenciesVersions.RETROFIT_MOSHI_CONVERTER}"
+    const val RETROFIT_CONVERTER = "com.squareup.retrofit2:converter-gson:${BuildDependenciesVersions.RETROFIT_GSON_CONVERTER}"
+
+    const val HTTP_LOGGER = "com.squareup.okhttp3:logging-interceptor:${BuildDependenciesVersions.HTTP_LOGGER}"
 
     const val PAGING = "androidx.paging:paging-runtime-ktx:${BuildDependenciesVersions.PAGING}"
 
