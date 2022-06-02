@@ -95,9 +95,10 @@ dependencies {
     implementation(Dependencies.COMPOSE_MATERIAL)
     implementation(Dependencies.COMPOSE_ACTIVITY)
     implementation(Dependencies.COMPOSE_VIEWMODEL)
-    implementation(Dependencies.COMPOSE_PREVIEW)
+    implementation(Dependencies.COMPOSE_CONSTRAINT_LAYOUT)
     implementation(Dependencies.COMPOSE_PAGING)
     implementation(Dependencies.COMPOSE_COIL)
+    implementation(Dependencies.COMPOSE_PREVIEW)
 
     addTestsDependencies()
 

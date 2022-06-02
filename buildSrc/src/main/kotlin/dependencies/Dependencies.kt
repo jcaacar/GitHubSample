@@ -17,6 +17,7 @@ object Dependencies {
     const val HTTP_LOGGER = "com.squareup.okhttp3:logging-interceptor:${BuildDependenciesVersions.HTTP_LOGGER}"
 
     const val PAGING = "androidx.paging:paging-runtime-ktx:${BuildDependenciesVersions.PAGING}"
+    const val COMPOSE_CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout-compose:${BuildDependenciesVersions.CONSTRAINT_LAYOUT_COMPOSE}"
 
     const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${BuildDependenciesVersions.COROUTINES}"
 
