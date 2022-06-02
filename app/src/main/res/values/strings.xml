@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GithubSample</string>
+
+    <string name="network_not_connected_msg">Network error, please check if you have internet connection.</string>
 </resources>
