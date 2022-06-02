@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zeca.githubsample">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".GitHubSampleApplication"
         android:allowBackup="true"
@@ -11,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubSample">
         <activity
-            android:name=".MainActivity"
+            android:name="com.zeca.githubsample.GitHubSampleActivity"
             android:exported="true"
             android:theme="@style/Theme.GithubSample">
             <intent-filter>
