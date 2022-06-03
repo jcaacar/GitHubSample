@@ -13,9 +13,10 @@ private val DarkColorPalette = darkColors(
 )
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = BlackBalticSea,
+    primaryVariant = BlueDeepSea,
+    secondary = Teal200,
+    background = WhiteLilac
 
     /* Other default colors to override
     background = Color.White,
@@ -39,6 +40,7 @@ fun GithubSampleTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Comp
         colors = colors,
         typography = Typography,
         shapes = Shapes,
+
         content = content
     )
 }
