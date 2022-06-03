@@ -11,6 +11,8 @@ object Dependencies {
     const val LIFECYCLE = "androidx.lifecycle:lifecycle-runtime-ktx:${BuildDependenciesVersions.LIFECYCLE}"
     const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${BuildDependenciesVersions.LIFECYCLE}"
 
+    const val GSON = "com.google.code.gson:gson:${BuildDependenciesVersions.GSON}"
+
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${BuildDependenciesVersions.RETROFIT}"
     const val RETROFIT_CONVERTER = "com.squareup.retrofit2:converter-gson:${BuildDependenciesVersions.RETROFIT_GSON_CONVERTER}"
 

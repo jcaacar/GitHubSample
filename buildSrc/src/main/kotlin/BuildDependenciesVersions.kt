@@ -11,6 +11,7 @@ object BuildDependenciesVersions {
     const val CORE_KTX = "1.7.0"
     const val PAGING = "3.1.1"
     const val PAGING_COMPOSE = "1.0.0-alpha14"
+    const val GSON = "2.8.5"
     const val RETROFIT = "2.9.0"
     const val RETROFIT_GSON_CONVERTER = "2.9.0"
     const val HTTP_LOGGER = "4.9.3"

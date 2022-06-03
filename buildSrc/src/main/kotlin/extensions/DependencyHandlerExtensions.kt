@@ -1,5 +1,6 @@
 package extensions
 
+import dependencies.Dependencies
 import org.gradle.api.artifacts.Dependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import dependencies.TestAndroidDependencies
@@ -14,9 +15,6 @@ fun DependencyHandler.androidTestImplementation(dependencyNotation: String): Dep
 fun DependencyHandler.kaptAndroidTest(dependencyNotation: Any): Dependency? =
     add("kaptAndroidTest", dependencyNotation)
 
-fun DependencyHandler.kaptAndroidTestaaa(dependencyNotation: Any): Dependency? =
-    add("kaptAndroidTest", dependencyNotation)
-
 fun DependencyHandler.addTestsDependencies() {
     testImplementation(TestDependencies.JUNIT)
     testImplementation(TestDependencies.JUNIT_EXT)
@@ -25,10 +23,13 @@ fun DependencyHandler.addTestsDependencies() {
     testImplementation(TestDependencies.TRUTH)
     testImplementation(TestDependencies.MOCKK)
 
+    androidTestImplementation(Dependencies.GSON)
+    androidTestImplementation(TestAndroidDependencies.COMPOSE)
     androidTestImplementation(TestAndroidDependencies.JUNIT_EXT)
     androidTestImplementation(TestAndroidDependencies.CORE_KTX)
+
+    androidTestImplementation(TestAndroidDependencies.CORE_KTX)
     androidTestImplementation(TestAndroidDependencies.ESPRESSO)
-    androidTestImplementation(TestAndroidDependencies.COMPOSE)
     androidTestImplementation(TestAndroidDependencies.TRUTH_EXT)
     androidTestImplementation(TestAndroidDependencies.MOCK_WEB_SERVER)
 
