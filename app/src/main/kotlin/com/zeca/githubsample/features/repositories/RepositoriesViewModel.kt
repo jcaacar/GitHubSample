@@ -17,6 +17,8 @@ import com.zeca.githubsample.data.repositories.RepoRepository
 import com.zeca.githubsample.features.repositories.ui.model.RepositoryUiModel
 import com.zeca.githubsample.features.repositories.ui.model.RepositoryUiModelMapper
 
+private const val TIMEOUT_FLOW_UNSUBSCRIBE = 5000L
+
 @HiltViewModel
 class RepositoriesViewModel @Inject constructor(
     private val mapper: RepositoryUiModelMapper,
@@ -29,6 +31,9 @@ class RepositoriesViewModel @Inject constructor(
                 mapper.map(repo)
             }
         })
-    }.stateIn(viewModelScope, SharingStarted.Lazily, PagingData.empty())
-        .cachedIn(viewModelScope)
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(TIMEOUT_FLOW_UNSUBSCRIBE),
+        PagingData.empty()
+    ).cachedIn(viewModelScope)
 }
