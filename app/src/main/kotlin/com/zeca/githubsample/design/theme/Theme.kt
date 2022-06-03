@@ -1,4 +1,4 @@
-package com.zeca.githubsample.ui.theme
+package com.zeca.githubsample.design.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

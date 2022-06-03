@@ -1,4 +1,4 @@
-package com.zeca.githubsample.ui.theme
+package com.zeca.githubsample.design.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

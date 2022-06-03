@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import dagger.hilt.android.AndroidEntryPoint
 import com.zeca.githubsample.features.repositories.ui.view.RepositoryListScreen
-import com.zeca.githubsample.ui.theme.GithubSampleTheme
+import com.zeca.githubsample.design.theme.GithubSampleTheme
 
 @AndroidEntryPoint
 class GitHubSampleActivity : ComponentActivity() {
