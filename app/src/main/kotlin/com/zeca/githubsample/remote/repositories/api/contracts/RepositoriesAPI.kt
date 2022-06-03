@@ -10,5 +10,4 @@ interface RepositoriesAPI {
         page: Int,
         perPage: Int
     ): SearchRepositoriesResponse
-
 }

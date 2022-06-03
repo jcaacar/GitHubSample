@@ -6,6 +6,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import com.zeca.githubsample.data.repositories.models.Repository
 import com.zeca.githubsample.remote.repositories.api.contracts.RepositoriesAPI
+import com.zeca.githubsample.remote.repositories.extensions.tryMap2APIException
 import com.zeca.githubsample.remote.repositories.mappers.RepositoryMapper
 
 private const val FIRST_PAGE = 1
@@ -42,7 +43,13 @@ internal class RemoteRepositoryPaging(
                 )
             }
         } catch (e: Exception) {
-            LoadResult.Error(e)
+            loadErrorResult(e)
         }
+    }
+
+    private fun loadErrorResult(exception: Exception): LoadResult.Error<Int, Repository> {
+        return exception.tryMap2APIException()?.let {
+            LoadResult.Error(it)
+        } ?: LoadResult.Error(exception)
     }
 }
