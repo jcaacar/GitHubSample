@@ -1,4 +1,4 @@
-package com.zeca.githubsample.remote.network.retrofit.di
+package com.zeca.githubsample.network.retrofit.di
 
 import javax.inject.Singleton
 import dagger.Module
@@ -11,8 +11,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.zeca.githubsample.BuildConfig
 import com.zeca.githubsample.common.helpers.NetworkHandler
-import com.zeca.githubsample.remote.network.retrofit.apis.RetrofitRepositoriesAPI
-import com.zeca.githubsample.remote.network.retrofit.interceptors.NetworkConnectionInterceptor
+import com.zeca.githubsample.network.retrofit.apis.RetrofitRepositoriesAPI
+import com.zeca.githubsample.network.retrofit.interceptors.NetworkConnectionInterceptor
 import com.zeca.githubsample.remote.repositories.api.contracts.RepositoriesAPI
 
 @Module

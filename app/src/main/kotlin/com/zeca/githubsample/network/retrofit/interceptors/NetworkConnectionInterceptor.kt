@@ -1,4 +1,4 @@
-package com.zeca.githubsample.remote.network.retrofit.interceptors
+package com.zeca.githubsample.network.retrofit.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Response

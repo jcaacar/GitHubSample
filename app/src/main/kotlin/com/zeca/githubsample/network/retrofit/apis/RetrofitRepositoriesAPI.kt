@@ -1,4 +1,4 @@
-package com.zeca.githubsample.remote.network.retrofit.apis
+package com.zeca.githubsample.network.retrofit.apis
 
 import retrofit2.http.GET
 import retrofit2.http.Query
