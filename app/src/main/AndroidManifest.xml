@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".GitHubSampleApplication"
+        android:name=".app.GitHubSampleApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubSample">
         <activity
-            android:name="com.zeca.githubsample.GitHubSampleActivity"
+            android:name="com.zeca.githubsample.app.GitHubSampleActivity"
             android:exported="true"
             android:theme="@style/Theme.GithubSample">
             <intent-filter>
