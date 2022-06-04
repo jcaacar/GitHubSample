@@ -10,5 +10,5 @@ object BuildAndroidConfig {
 
     const val SUPPORT_LIBRARY_VECTOR_DRAWABLES = true
 
-    const val TEST_INSTRUMENTATION_RUNNER = "com.zeca.githubsample.CustomTestRunner"
+    const val TEST_INSTRUMENTATION_RUNNER = "com.zeca.githubsample.runner.HiltTestRunner"
 }

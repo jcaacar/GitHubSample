@@ -7,6 +7,7 @@ import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.zeca.githubsample.R
@@ -18,7 +19,9 @@ fun Loading(modifier: Modifier = Modifier) {
         contentAlignment = Alignment.Center
     ) {
         CircularProgressIndicator(
-            modifier = Modifier.size(dimensionResource(id = R.dimen.loading_size))
+            modifier = Modifier
+                .testTag(Loading.TAG)
+                .size(dimensionResource(id = R.dimen.loading_size))
         )
     }
 }
@@ -27,4 +30,8 @@ fun Loading(modifier: Modifier = Modifier) {
 @Composable
 fun LoadingPreview() {
     Loading()
+}
+
+object Loading {
+    const val TAG = "loading-tag"
 }
