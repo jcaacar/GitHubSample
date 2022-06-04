@@ -41,9 +41,7 @@ object RetrofitModule {
         }
 
         builder.addInterceptor(
-            NetworkConnectionInterceptor(
-                networkHandler::isNetworkAvailable
-            )
+            NetworkConnectionInterceptor(networkHandler)
         )
 
         return builder.build()
