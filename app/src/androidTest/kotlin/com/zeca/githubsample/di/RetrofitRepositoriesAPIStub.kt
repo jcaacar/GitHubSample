@@ -19,7 +19,11 @@ class RetrofitRepositoriesAPIStub : RetrofitRepositoriesAPI {
         perPage: Int
     ): SearchRepositoriesResponse {
         if (isError) throw Exception()
-        if (isLoading) delay(200)
+
+        if (isLoading) {
+            delay(1000)
+            return SearchRepositoriesResponse(listOf())
+        }
 
         val response = RetrofitRepositoriesAPIStub::class.java.classLoader!!
             .getResource(RESPONSE_OK)!!
