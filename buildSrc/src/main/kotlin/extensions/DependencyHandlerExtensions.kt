@@ -22,6 +22,7 @@ fun DependencyHandler.addTestsDependencies() {
     testImplementation(TestDependencies.COROUTINE)
     testImplementation(TestDependencies.TRUTH)
     testImplementation(TestDependencies.MOCKK)
+    testImplementation(TestDependencies.TURBINE)
 
     androidTestImplementation(Dependencies.GSON)
     androidTestImplementation(TestAndroidDependencies.COMPOSE)

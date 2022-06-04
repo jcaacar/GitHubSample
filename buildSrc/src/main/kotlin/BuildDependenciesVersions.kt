@@ -28,4 +28,5 @@ object BuildDependenciesVersions {
     const val TRUTH = "1.1.3"
     const val ESPRESSO = "3.4.0"
     const val MOCK_WEB_SERVER = "4.9.3"
+    const val TURBINE = "0.8.0"
 }
