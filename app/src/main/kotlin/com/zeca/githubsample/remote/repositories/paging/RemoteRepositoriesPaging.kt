@@ -2,20 +2,23 @@ package com.zeca.githubsample.remote.repositories.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import com.zeca.githubsample.data.repositories.models.Repository
 import com.zeca.githubsample.remote.repositories.api.contracts.RepositoriesAPI
+import com.zeca.githubsample.remote.repositories.api.responses.SearchRepositoriesResponse
 import com.zeca.githubsample.remote.repositories.extensions.tryMap2APIException
 import com.zeca.githubsample.remote.repositories.mappers.RepositoryMapper
 
 private const val FIRST_PAGE = 1
 
-internal class RemoteRepositoryPaging(
+class RemoteRepositoriesPaging(
     private val query: String,
     private val sort: String,
     private val mapper: RepositoryMapper,
-    private val repositoriesAPI: RepositoriesAPI
+    private val repositoriesAPI: RepositoriesAPI,
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : PagingSource<Int, Repository>() {
 
     override fun getRefreshKey(state: PagingState<Int, Repository>): Int? {
@@ -24,7 +27,7 @@ internal class RemoteRepositoryPaging(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Repository> {
         return try {
-            return withContext(Dispatchers.IO) {
+            return withContext(dispatcher) {
                 val currentPage = params.key ?: FIRST_PAGE
                 val response = repositoriesAPI.getRepositories(
                     query = query,
@@ -33,13 +36,10 @@ internal class RemoteRepositoryPaging(
                     perPage = params.loadSize
                 )
 
-                val prevKey = if (currentPage == FIRST_PAGE) null else currentPage - 1
-                val nextKey = if (response.repositories.isEmpty()) null else currentPage + 1
-
                 LoadResult.Page(
                     data = response.repositories.map { mapper.map(it) },
-                    prevKey = prevKey,
-                    nextKey = nextKey
+                    prevKey = evaluatePrevKey(currentPage),
+                    nextKey = evaluateNextKey(response, currentPage, params.loadSize)
                 )
             }
         } catch (e: Exception) {
@@ -51,5 +51,30 @@ internal class RemoteRepositoryPaging(
         return exception.tryMap2APIException()?.let {
             LoadResult.Error(it)
         } ?: LoadResult.Error(exception)
+    }
+
+    private fun evaluatePrevKey(
+        currentPage: Int
+    ): Int? {
+        return if (currentPage == FIRST_PAGE) null
+        else currentPage - 1
+    }
+
+    private fun evaluateNextKey(
+        response: SearchRepositoriesResponse,
+        currentPage: Int,
+        perPage: Int
+    ): Int? {
+        return if (endOfPaginationReached(response, perPage)) null
+        else currentPage + 1
+    }
+
+    private fun endOfPaginationReached(
+        response: SearchRepositoriesResponse,
+        perPage: Int
+    ): Boolean {
+        return response.repositories.run {
+            isEmpty() || size < perPage
+        }
     }
 }

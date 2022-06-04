@@ -5,7 +5,7 @@ import com.zeca.githubsample.data.repositories.contracts.RepositoriesDataSource
 import com.zeca.githubsample.data.repositories.models.Repository
 import com.zeca.githubsample.remote.repositories.api.contracts.RepositoriesAPI
 import com.zeca.githubsample.remote.repositories.mappers.RepositoryMapper
-import com.zeca.githubsample.remote.repositories.paging.RemoteRepositoryPaging
+import com.zeca.githubsample.remote.repositories.paging.RemoteRepositoriesPaging
 
 internal class RemoteRepositoriesDataSource(
     private val mapper: RepositoryMapper,
@@ -15,6 +15,6 @@ internal class RemoteRepositoriesDataSource(
         query: String,
         sort: String
     ): PagingSource<Int, Repository> {
-        return RemoteRepositoryPaging(query, sort, mapper, repositoriesAPI)
+        return RemoteRepositoriesPaging(query, sort, mapper, repositoriesAPI)
     }
 }
