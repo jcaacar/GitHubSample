@@ -5,7 +5,7 @@ import com.zeca.githubsample.common.Mapper
 import com.zeca.githubsample.data.repositories.models.Repository
 
 class RepositoryUiModelMapper @Inject constructor() : Mapper<Repository, RepositoryUiModel> {
-    override suspend fun map(from: Repository): RepositoryUiModel {
+    override fun map(from: Repository): RepositoryUiModel {
         return from.run {
             RepositoryUiModel(
                 id,
