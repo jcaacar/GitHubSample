@@ -17,11 +17,11 @@ class RemoteRepositoriesPagingTest {
     @Test
     fun `should returns always anchorPosition when refresh key`() {
         val responseApi = RepositoriesAPIStub()
-        val repositoriesApi = RemoteRepositoriesPaging("", "", RepositoryMapper(), responseApi)
+        val repositoriesPaging = RemoteRepositoriesPaging("", "", RepositoryMapper(), responseApi)
 
         val anchorPosition = 10
 
-        val result = repositoriesApi.getRefreshKey(
+        val result = repositoriesPaging.getRefreshKey(
             state = PagingState(
                 listOf(),
                 anchorPosition = anchorPosition,
@@ -35,24 +35,24 @@ class RemoteRepositoriesPagingTest {
 
     @Test
     fun `should returns repositories paginated with success`() = runTest {
-        val responseApi = RepositoryResponseHelper.build(5)
+        val response = RepositoryResponseHelper.build(5)
 
         val page = 1
         val perPage = 5
 
         val expectedLoadResult =
             PagingSource.LoadResult.Page(
-                data = responseApi.takeMap(perPage, RepositoryMapper()),
+                data = response.takeMap(perPage, RepositoryMapper()),
                 prevKey = null,
                 nextKey = 2
             )
 
-        runLoadTest(expectedLoadResult, responseApi, page, perPage)
+        runLoadTest(expectedLoadResult, response, page, perPage)
     }
 
     @Test
     fun `should returns empty when doesn't pagination is ended`() = runTest {
-        val responseApi = RepositoryResponseHelper.build(5)
+        val response = RepositoryResponseHelper.build(5)
 
         val page = 2
         val perPage = 5
@@ -64,7 +64,7 @@ class RemoteRepositoriesPagingTest {
                 nextKey = null
             )
 
-        runLoadTest(expectedLoadResult, responseApi, page, perPage)
+        runLoadTest(expectedLoadResult, response, page, perPage)
     }
 
     @Test
