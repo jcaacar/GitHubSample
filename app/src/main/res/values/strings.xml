@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">GithubSample</string>
+    <string name="app_name">GitHub Sample</string>
 
-    <string name="network_not_connected_msg">Network error, please check if you have internet connection.</string>
+    <string name="network_not_connected_msg">Oops, there was a network error,\nplease check your internet connection. :(</string>
     <string name="api_rate_limit_exceed_msg">API rate limit exceeded. Check out the documentation for more details.</string>
     <string name="general_error_msg">Oops, something went wrong. Please try again later.</string>
 </resources>
