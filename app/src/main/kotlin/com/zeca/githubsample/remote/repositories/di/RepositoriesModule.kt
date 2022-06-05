@@ -12,7 +12,7 @@ import com.zeca.githubsample.remote.repositories.mappers.RepositoryMapper
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RepositoriesModule {
+internal object RepositoriesModule {
 
     @Singleton
     @Provides

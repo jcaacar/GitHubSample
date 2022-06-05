@@ -1,4 +1,4 @@
-package com.zeca.githubsample.network.retrofit.interceptors
+package com.zeca.githubsample.remote.netwok.retrofit.interceptors
 
 import io.mockk.every
 import io.mockk.mockk

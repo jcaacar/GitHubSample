@@ -8,7 +8,7 @@ import com.zeca.githubsample.data.repositories.contracts.RepositoriesDataSource
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RepositoriesModule {
+internal object RepositoriesModule {
 
     fun provideGitHubRepository(repositoriesDataSource: RepositoriesDataSource) =
         RepoRepository(repositoriesDataSource)

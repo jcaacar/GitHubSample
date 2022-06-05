@@ -1,4 +1,4 @@
-package com.zeca.githubsample.network.retrofit.di
+package com.zeca.githubsample.remote.netwok.retrofit.di
 
 import javax.inject.Singleton
 import dagger.Module
@@ -11,13 +11,13 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.zeca.githubsample.BuildConfig
 import com.zeca.githubsample.common.helpers.NetworkHandler
-import com.zeca.githubsample.network.retrofit.apis.RetrofitRepositoriesAPI
-import com.zeca.githubsample.network.retrofit.interceptors.NetworkConnectionInterceptor
+import com.zeca.githubsample.remote.netwok.retrofit.apis.RetrofitRepositoriesAPI
+import com.zeca.githubsample.remote.netwok.retrofit.interceptors.NetworkConnectionInterceptor
 import com.zeca.githubsample.remote.repositories.api.contracts.RepositoriesAPI
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RetrofitModule {
+internal object RetrofitModule {
 
     @Provides
     fun provideGitHubBaseUrl() = BuildConfig.GITHUB_API_BASE_URL

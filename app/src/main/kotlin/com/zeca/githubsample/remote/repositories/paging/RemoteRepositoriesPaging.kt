@@ -13,7 +13,7 @@ import com.zeca.githubsample.remote.repositories.mappers.RepositoryMapper
 
 private const val FIRST_PAGE = 1
 
-class RemoteRepositoriesPaging(
+internal class RemoteRepositoriesPaging(
     private val query: String,
     private val sort: String,
     private val mapper: RepositoryMapper,
