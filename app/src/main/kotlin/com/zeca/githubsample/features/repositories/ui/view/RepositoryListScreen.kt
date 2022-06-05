@@ -1,6 +1,5 @@
 package com.zeca.githubsample.features.repositories.ui.view
 
-import android.util.Log
 import androidx.annotation.StringRes
 import androidx.compose.material.Scaffold
 import androidx.compose.material.ScaffoldState
