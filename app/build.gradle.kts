@@ -52,7 +52,7 @@ android {
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         kotlinOptions {
             jvmTarget = JavaVersion.VERSION_1_8.toString()
-            freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+            freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
         }
     }
     buildFeatures {
@@ -74,32 +74,22 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.CORE_KTX)
-    implementation(Dependencies.APPCOMPAT)
+    implementation(Dependencies.COMPOSE_UI)
+    implementation(Dependencies.COMPOSE_MATERIAL)
+    implementation(Dependencies.COMPOSE_ACTIVITY)
+    implementation(Dependencies.COMPOSE_VIEWMODEL)
+    implementation(Dependencies.COMPOSE_PAGING)
+    implementation(Dependencies.COMPOSE_COIL)
+    implementation(Dependencies.COMPOSE_PREVIEW)
 
-    implementation(Dependencies.HILT)
-    kapt(Dependencies.HILT_COMPILER)
-    kapt(Dependencies.HILT_X_COMPILER)
-
-    implementation(Dependencies.LIFECYCLE)
-    implementation(Dependencies.LIFECYCLE_VIEWMODEL)
+    implementation(Dependencies.COROUTINES)
 
     implementation(Dependencies.RETROFIT)
     implementation(Dependencies.RETROFIT_CONVERTER)
     implementation(Dependencies.HTTP_LOGGER)
 
-    implementation(Dependencies.PAGING)
-
-    implementation(Dependencies.COROUTINES)
-
-    implementation(Dependencies.COMPOSE_UI)
-    implementation(Dependencies.COMPOSE_MATERIAL)
-    implementation(Dependencies.COMPOSE_ACTIVITY)
-    implementation(Dependencies.COMPOSE_VIEWMODEL)
-    implementation(Dependencies.COMPOSE_CONSTRAINT_LAYOUT)
-    implementation(Dependencies.COMPOSE_PAGING)
-    implementation(Dependencies.COMPOSE_COIL)
-    implementation(Dependencies.COMPOSE_PREVIEW)
+    implementation(Dependencies.HILT)
+    kapt(Dependencies.HILT_COMPILER)
 
     addTestsDependencies()
 
