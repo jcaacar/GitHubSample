@@ -1,4 +1,4 @@
-package com.zeca.githubsample.app
+package com.zeca.githubsample
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

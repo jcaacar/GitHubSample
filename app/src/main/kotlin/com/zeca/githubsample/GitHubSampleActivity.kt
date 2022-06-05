@@ -1,4 +1,4 @@
-package com.zeca.githubsample.app
+package com.zeca.githubsample
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
