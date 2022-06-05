@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.components.SingletonComponent
 import dagger.hilt.testing.TestInstallIn
-import com.zeca.githubsample.network.retrofit.di.RetrofitModule
+import com.zeca.githubsample.remote.netwok.retrofit.di.RetrofitModule
 import com.zeca.githubsample.remote.repositories.api.contracts.RepositoriesAPI
 
 @Module
